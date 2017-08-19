@@ -1,0 +1,12 @@
+<h1> You have {{toDonts.length}} Todos </h1>
+<a href="/toDonts/new">Create A New Todo</a>
+<ul>
+  {{#each toDonts}}
+    <li>Description: <a href="/toDonts/{{@index}}">{{description}}</a></li>
+    <li>Urgent: {{urgent}}</li>
+    <form method="POST" action="/toDonts/{{@index}}?_method=DELETE">
+      <button>DELETE</button>
+    </form>
+    <br>
+  {{/each}}
+</ul>
